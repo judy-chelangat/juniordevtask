@@ -1,0 +1,88 @@
+{
+  "dashboard-metrics": {
+    "collections": 120,
+    "signups": 85,
+    "revenue": 50000,
+    "bouncedCheques": 3
+  },
+  "schools": [
+    {
+      "id": "1",
+      "name": "Green Valley School",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "county": "Nairobi",
+      "registrationDate": "2020-01-15",
+      "contact": "info@greenvalley.com",
+      "balance": 1200
+    },
+    {
+      "id": "2",
+      "name": "Blue Ridge Academy",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "county": "Mombasa",
+      "registrationDate": "2019-08-20",
+      "contact": "info@blueridge.com",
+      "balance": 800
+    }
+  ],
+  "invoices": [
+    {
+      "id": "1",
+      "invoiceNumber": "INV001",
+      "item": "Zeraki Analytics",
+      "creationDate": "2023-01-01",
+      "dueDate": "2023-02-01",
+      "amount": 1000,
+      "paidAmount": 500,
+      "balance": 500,
+      "status": "Pending",
+      "schoolId": 1
+    },
+    {
+      "id": "2",
+      "invoiceNumber": "INV002",
+      "item": "Zeraki Finance",
+      "creationDate": "2023-03-01",
+      "dueDate": "2023-04-01",
+      "amount": 1200,
+      "paidAmount": 1200,
+      "balance": 0,
+      "status": "Completed",
+      "schoolId": 2
+    },
+    {
+      "id": "5a51",
+      "invoiceNumber": "234564",
+      "item": "22222222222",
+      "creationDate": "2024-05-29",
+      "dueDate": "2024-05-31",
+      "amount": "22111",
+      "paidAmount": "122",
+      "balance": "1111",
+      "status": "Pending",
+      "schoolId": "1"
+    }
+  ],
+  "collections": [
+    {
+      "id": "1",
+      "invoiceNumber": "INV001",
+      "collectionNumber": "COL001",
+      "date": "2023-01-15",
+      "amount": 500,
+      "status": "Valid",
+      "schoolId": 1
+    },
+    {
+      "id": "2",
+      "invoiceNumber": "INV002",
+      "collectionNumber": "COL002",
+      "date": "2023-03-15",
+      "amount": 1200,
+      "status": "Valid",
+      "schoolId": 2
+    }
+  ]
+}
