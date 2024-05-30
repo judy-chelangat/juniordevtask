@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [bouncedCheques, setBouncedCheques] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/dashboard-metrics').then((response) => {
+    axios.get('https://sales-dashboard-mjen.onrender.com/dashboard-metrics').then((response) => {
       const data = response.data;
       setCollections(data.collections);
       setSignups(data.signups);

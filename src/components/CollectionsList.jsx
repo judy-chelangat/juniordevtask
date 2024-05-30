@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import CollectionForm from './CollectionForm';
 
-const CollectionsList = ({ schoolId }) => {
+const CollectionsList = ({ invoiceId }) => {
   const [collections, setCollections] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchCollections = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/collections?schoolId=${schoolId}`);
+        const response = await fetch(`http://localhost:4000/collections?invoiceId=${invoiceId}`);
         const data = await response.json();
         setCollections(data);
       } catch (error) {
@@ -15,11 +17,11 @@ const CollectionsList = ({ schoolId }) => {
     };
 
     fetchCollections();
-  }, [schoolId]);
+  }, [invoiceId]);
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:4000/collections/${id}`, {
+      const response = await fetch(`https://sales-dashboard-mjen.onrender.com/collections/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -38,13 +40,23 @@ const CollectionsList = ({ schoolId }) => {
     }
   };
 
+  const handleAddCollection = () => {
+    setShowForm(true);
+  };
+
+  const handleFormClose = () => {
+    setShowForm(false);
+  };
+
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Collections</h2>
+      <button onClick={handleAddCollection} className="mb-4 bg-green-500 text-white px-4 py-2 rounded">
+        Add Collection
+      </button>
+      {showForm && <CollectionForm invoiceId={invoiceId} onClose={handleFormClose} />}
       <table className="min-w-full bg-white">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Invoice Number</th>
             <th className="py-2 px-4 border-b">Collection Number</th>
             <th className="py-2 px-4 border-b">Date of Collection</th>
             <th className="py-2 px-4 border-b">Amount</th>
@@ -55,7 +67,6 @@ const CollectionsList = ({ schoolId }) => {
         <tbody>
           {collections.map(collection => (
             <tr key={collection.id}>
-              <td className="py-2 px-4 border-b">{collection.invoiceNumber}</td>
               <td className="py-2 px-4 border-b">{collection.collectionNumber}</td>
               <td className="py-2 px-4 border-b">{collection.date}</td>
               <td className="py-2 px-4 border-b">{collection.amount}</td>

@@ -1,4 +1,3 @@
-// src/components/Counters.js
 import React from 'react';
 
 const Counters = ({ collections, signups, revenue, bouncedCheques }) => (

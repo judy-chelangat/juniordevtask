@@ -1,4 +1,3 @@
-// src/components/Charts.js
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
 
@@ -19,7 +18,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 const Charts = () => (
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
     <div className="bg-white p-4 rounded shadow">
-      <h3 className="text-xl font-semibold mb-4">Signup Targets</h3>
+      <h3 className="text-xl font-semibold mb-4">Signup Target</h3>
       <PieChart width={400} height={400}>
         <Pie data={pieData} cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label>
           {pieData.map((entry, index) => (
@@ -30,7 +29,7 @@ const Charts = () => (
       </PieChart>
     </div>
     <div className="bg-white p-4 rounded shadow">
-      <h3 className="text-xl font-semibold mb-4">Signups Overview</h3>
+      <h3 className="text-xl font-semibold mb-4">Signup Overview</h3>
       <BarChart width={600} height={300} data={barData}>
         <XAxis dataKey="name" />
         <YAxis />

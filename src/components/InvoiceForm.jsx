@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const InvoiceForm = ({ schoolId, onClose }) => {
+const InvoiceForm = ({ schoolId, invoiceData, onClose }) => {
   const [invoice, setInvoice] = useState({
     invoiceNumber: '',
     item: '',
@@ -13,6 +13,12 @@ const InvoiceForm = ({ schoolId, onClose }) => {
     schoolId: schoolId
   });
 
+  useEffect(() => {
+    if (invoiceData) {
+      setInvoice(invoiceData);
+    }
+  }, [invoiceData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInvoice(prevInvoice => ({
@@ -24,8 +30,10 @@ const InvoiceForm = ({ schoolId, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/invoices', {
-        method: 'POST',
+      const method = invoice.id ? 'PATCH' : 'POST';
+      const url = invoice.id ? `https://sales-dashboard-mjen.onrender.com/invoices/${invoice.id}` : 'https://sales-dashboard-mjen.onrender.com/invoices';
+      const response = await fetch(url, {
+        method: method,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -34,10 +42,10 @@ const InvoiceForm = ({ schoolId, onClose }) => {
       if (response.ok) {
         onClose();
       } else {
-        console.error('Error adding invoice');
+        console.error('Error saving invoice');
       }
     } catch (error) {
-      console.error('Error adding invoice:', error);
+      console.error('Error saving invoice:', error);
     }
   };
 
@@ -132,7 +140,7 @@ const InvoiceForm = ({ schoolId, onClose }) => {
         </select>
       </div>
       <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-        Add Invoice
+        {invoice.id ? 'Update Invoice' : 'Add Invoice'}
       </button>
     </form>
   );

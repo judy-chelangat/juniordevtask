@@ -7,7 +7,7 @@ const SchoolsList = () => {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const response = await fetch('http://localhost:4000/schools');
+        const response = await fetch('https://sales-dashboard-mjen.onrender.com/schools');
         const data = await response.json();
         setSchools(data);
       } catch (error) {

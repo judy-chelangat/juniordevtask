@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import InvoiceForm from './InvoiceForm';
+import CollectionsList from './CollectionsList';
 
 const InvoicesList = ({ schoolId }) => {
   const [invoices, setInvoices] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [selectedInvoice, setSelectedInvoice] = useState(null);
 
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/invoices?schoolId=${schoolId}`);
+        const response = await fetch(`https://sales-dashboard-mjen.onrender.com/invoices?schoolId=${schoolId}`);
         const data = await response.json();
         setInvoices(data);
       } catch (error) {
@@ -25,6 +27,10 @@ const InvoicesList = ({ schoolId }) => {
 
   const handleFormClose = () => {
     setShowForm(false);
+  };
+
+  const handleInvoiceSelect = (invoice) => {
+    setSelectedInvoice(invoice);
   };
 
   return (
@@ -49,7 +55,7 @@ const InvoicesList = ({ schoolId }) => {
         </thead>
         <tbody>
           {invoices.map(invoice => (
-            <tr key={invoice.id}>
+            <tr key={invoice.id} onClick={() => handleInvoiceSelect(invoice)}>
               <td className="py-2 px-4 border-b">{invoice.invoiceNumber}</td>
               <td className="py-2 px-4 border-b">{invoice.item}</td>
               <td className="py-2 px-4 border-b">{invoice.creationDate}</td>
@@ -62,6 +68,12 @@ const InvoicesList = ({ schoolId }) => {
           ))}
         </tbody>
       </table>
+      {selectedInvoice && (
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-4">Collection for Invoice {selectedInvoice.invoiceNumber}</h3>
+          <CollectionsList invoiceId={selectedInvoice.id} />
+        </div>
+      )}
     </div>
   );
 };

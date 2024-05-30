@@ -1,14 +1,14 @@
 {
   "dashboard-metrics": {
-    "collections": 120,
-    "signups": 85,
-    "revenue": 50000,
-    "bouncedCheques": 3
+    "collections": 100,
+    "signups": 45,
+    "revenue": 40000,
+    "bouncedCheques": 2
   },
   "schools": [
     {
       "id": "1",
-      "name": "Green Valley School",
+      "name": "Joy Valley School",
       "type": "Primary",
       "product": "Zeraki Analytics",
       "county": "Nairobi",
@@ -18,13 +18,93 @@
     },
     {
       "id": "2",
-      "name": "Blue Ridge Academy",
+      "name": "Blue Straight Academy",
       "type": "Secondary",
       "product": "Zeraki Finance",
       "county": "Mombasa",
       "registrationDate": "2019-08-20",
       "contact": "info@blueridge.com",
       "balance": 800
+    },
+    {
+      "id": "3",
+      "name": "Sunshine  School",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "county": "Kampala",
+      "registrationDate": "2021-02-10",
+      "contact": "info@sunshine.com",
+      "balance": 2000
+    },
+    {
+      "id": "4",
+      "name": "Redwood High School",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "county": "Nairobi",
+      "registrationDate": "2020-05-05",
+      "contact": "info@redwood.com",
+      "balance": 1500
+    },
+    {
+      "id": "5",
+      "name": "Golden  Academy",
+      "type": "Primary",
+      "product": "Zeraki Timetable",
+      "county": "Mombasa",
+      "registrationDate": "2019-12-20",
+      "contact": "info@goldengate.com",
+      "balance": 1000
+    },
+    {
+      "id": "6",
+      "name": "Silver Oak School",
+      "type": "Secondary",
+      "product": "Zeraki Analytics",
+      "county": "Kampala",
+      "registrationDate": "2020-08-15",
+      "contact": "info@silveroak.com",
+      "balance": 2200
+    },
+    {
+      "id": "7",
+      "name": "Emerald Heights Academy",
+      "type": "Primary",
+      "product": "Zeraki Finance",
+      "county": "Nairobi",
+      "registrationDate": "2021-03-25",
+      "contact": "info@emeraldheights.com",
+      "balance": 1800
+    },
+    {
+      "id": "8",
+      "name": "Sunrise International School",
+      "type": "Secondary",
+      "product": "Zeraki Timetable",
+      "county": "Mombasa",
+      "registrationDate": "2022-01-10",
+      "contact": "info@sunrise.com",
+      "balance": 3000
+    },
+    {
+      "id": "9",
+      "name": "Rosewood Academy",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "county": "Nairobi",
+      "registrationDate": "2023-04-05",
+      "contact": "info@rosewood.com",
+      "balance": 2500
+    },
+    {
+      "id": "10",
+      "name": "Diamond International School",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "county": "Kampala",
+      "registrationDate": "2023-06-20",
+      "contact": "info@diamond.com",
+      "balance": 3500
     }
   ],
   "invoices": [
@@ -32,13 +112,13 @@
       "id": "1",
       "invoiceNumber": "INV001",
       "item": "Zeraki Analytics",
-      "creationDate": "2023-01-01",
-      "dueDate": "2023-02-01",
+      "creationDate": "2023-01-15",
+      "dueDate": "2023-02-15",
       "amount": 1000,
-      "paidAmount": 500,
-      "balance": 500,
+      "paidAmount": 800,
+      "balance": 200,
       "status": "Pending",
-      "schoolId": 1
+      "schoolId": "1"
     },
     {
       "id": "2",
@@ -50,19 +130,103 @@
       "paidAmount": 1200,
       "balance": 0,
       "status": "Completed",
-      "schoolId": 2
+      "schoolId": "2"
     },
     {
-      "id": "5a51",
-      "invoiceNumber": "234564",
-      "item": "22222222222",
-      "creationDate": "2024-05-29",
-      "dueDate": "2024-05-31",
-      "amount": "22111",
-      "paidAmount": "122",
-      "balance": "1111",
+      "id": "3",
+      "invoiceNumber": "INV003",
+      "item": "Zeraki Analytics",
+      "creationDate": "2023-05-10",
+      "dueDate": "2023-06-10",
+      "amount": 1500,
+      "paidAmount": 0,
+      "balance": 1500,
       "status": "Pending",
-      "schoolId": "1"
+      "schoolId": "3"
+    },
+    {
+      "id": "4",
+      "invoiceNumber": "INV004",
+      "item": "Zeraki Finance",
+      "creationDate": "2023-07-20",
+      "dueDate": "2023-08-20",
+      "amount": 1800,
+      "paidAmount": 0,
+      "balance": 1800,
+      "status": "Pending",
+      "schoolId": "4"
+    },
+    {
+      "id": "5",
+      "invoiceNumber": "INV005",
+      "item": "Zeraki Timetable",
+      "creationDate": "2023-09-05",
+      "dueDate": "2023-10-05",
+      "amount": 2000,
+      "paidAmount": 0,
+      "balance": 2000,
+      "status": "Pending",
+      "schoolId": "5"
+    },
+    {
+      "id": "6",
+      "invoiceNumber": "INV006",
+      "item": "Zeraki Analytics",
+      "creationDate": "2023-11-15",
+      "dueDate": "2023-12-15",
+      "amount": 2200,
+      "paidAmount": 0,
+      "balance": 2200,
+      "status": "Pending",
+      "schoolId": "6"
+    },
+    {
+      "id": "7",
+      "invoiceNumber": "INV007",
+      "item": "Zeraki Finance",
+      "creationDate": "2024-01-25",
+      "dueDate": "2024-02-25",
+      "amount": 2500,
+      "paidAmount": 0,
+      "balance": 2500,
+      "status": "Pending",
+      "schoolId": "7"
+    },
+    {
+      "id": "8",
+      "invoiceNumber": "INV008",
+      "item": "Zeraki Timetable",
+      "creationDate": "2024-03-10",
+      "dueDate": "2024-04-10",
+      "amount": 2800,
+      "paidAmount": 0,
+      "balance": 2800,
+      "status": "Pending",
+      "schoolId": "8"
+    },
+    {
+      "id": "9",
+      "invoiceNumber": "INV009",
+      "item": "Zeraki Analytics",
+      "creationDate": "2024-05-20",
+      "dueDate": "2024-06-20",
+      "amount": 3000,
+      "paidAmount": 0,
+      "balance": 3000,
+      "status": "Pending",
+      "schoolId": "9"
+    },
+    {
+      "id": "10",
+      "invoiceNumber": "INV010",
+      "item": "Zeraki Finance",
+      "creationDate": "2024-07-05",
+      "dueDate": "2024-08-05",
+      "amount": 3200,
+      "paidAmount": 0,
+      "balance": 3200,
+      "status": "Pending",
+      "schoolId": "10"
     }
   ],
   "collections": [
@@ -70,19 +234,98 @@
       "id": "1",
       "invoiceNumber": "INV001",
       "collectionNumber": "COL001",
-      "date": "2023-01-15",
+      "date": "2023-02-01",
       "amount": 500,
-      "status": "Valid",
-      "schoolId": 1
+      "status": "Bounced",
+      "schoolId": "1"
     },
     {
       "id": "2",
       "invoiceNumber": "INV002",
       "collectionNumber": "COL002",
-      "date": "2023-03-15",
+      "date": "2023-04-01",
       "amount": 1200,
+      "status": "Bounced",
+      "schoolId": "2"
+    },
+    {
+      "id": "3",
+      "invoiceNumber": "INV003",
+      "collectionNumber": "COL003",
+      "date": "2023-06-10",
+      "amount": 1500,
+      "status": "Bounced",
+      "schoolId": "3"
+    },
+    {
+      "id": "4",
+      "invoiceNumber": "INV004",
+      "collectionNumber": "COL004",
+      "date": "2023-08-20",
+      "amount": 1800,
       "status": "Valid",
-      "schoolId": 2
+      "schoolId": "4"
+    },
+    {
+      "id": "5",
+      "invoiceNumber": "INV005",
+      "collectionNumber": "COL005",
+      "date": "2023-10-05",
+      "amount": 2000,
+      "status": "Valid",
+      "schoolId": "5"
+    },
+    {
+      "id": "6",
+      "invoiceNumber": "INV006",
+      "collectionNumber": "COL006",
+      "date": "2023-12-15",
+      "amount": 2200,
+      "status": "Valid",
+      "schoolId": "6"
+    },
+    {
+      "id": "7",
+      "invoiceNumber": "INV007",
+      "collectionNumber": "COL007",
+      "date": "2024-02-25",
+      "amount": 2500,
+      "status": "Valid",
+      "schoolId": "7"
+    },
+    {
+      "id": "8",
+      "invoiceNumber": "INV008",
+      "collectionNumber": "COL008",
+      "date": "2024-04-10",
+      "amount": 2800,
+      "status": "Valid",
+      "schoolId": "8"
+    },
+    {
+      "id": "9",
+      "invoiceNumber": "INV009",
+      "collectionNumber": "COL009",
+      "date": "2024-06-20",
+      "amount": 3000,
+      "status": "Valid",
+      "schoolId": "9"
+    },
+    {
+      "id": "10",
+      "invoiceNumber": "INV010",
+      "collectionNumber": "COL010",
+      "date": "2024-08-05",
+      "amount": 3200,
+      "status": "Valid",
+      "schoolId": "10"
+    },
+    {
+      "id": "c931",
+      "collectionNumber": "dddddddd",
+      "date": "2024-05-30",
+      "amount": "22222222",
+      "status": "Bounced"
     }
   ]
 }
