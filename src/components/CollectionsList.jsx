@@ -8,7 +8,7 @@ const CollectionsList = ({ invoiceId }) => {
   useEffect(() => {
     const fetchCollections = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/collections?invoiceId=${invoiceId}`);
+        const response = await fetch(`https://sales-dashboard-mjen.onrender.com/collections?invoiceId=${invoiceId}`);
         const data = await response.json();
         setCollections(data);
       } catch (error) {
