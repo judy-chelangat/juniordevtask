@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SideNav from '../components/SideNav';
 import Counters from '../components/Counters';
-import Charts from '../components/Charts';
+import Graphs from '../components/Graphs';
 import axios from 'axios';
 
 const Dashboard = () => {
@@ -30,7 +30,7 @@ const Dashboard = () => {
           revenue={revenue}
           bouncedCheques={bouncedCheques}
         />
-        <Charts />
+        <Graphs />
       </div>
     </div>
   );
